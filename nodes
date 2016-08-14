@@ -1,0 +1,54 @@
+爬虫：一段自动抓取互联网信息的程序
+
+人工输入--》爬虫-》爬虫/有价值的数据
+
+价值：新闻阅读器，爆笑app，美图集锦，图书，购物对比，技术文章获取
+
+简单爬虫架构：
+
+				URL管理
+	爬虫调度器	网页下载			价值数据
+				网页解析
+
+URL管理器：
+	管理准备抓取以及已经抓取过得网页URL，防止重复，循环
+
+URL管理器实现方式：
+	内存方式：set，防止重复
+	关系数据库：MySql：urls（url，is_crawled）
+	缓存数据库：redis：set
+
+python中的网页下载器
+	urllib2，官方模块
+	requests，第三方
+
+下载器三种方式：
+	直接urlopen（）
+	添加header，data
+	添加特殊场景处理：cookie，Proxy，https，httpRedirecthandler（自动跳转）
+
+3实现
+urllib2.build_opener--->install_opener-->urlopen()
+
+网页解析器：从网页中 提取有价值信息的工具
+	html字符串文档--》解析器--》价值数据/新url
+
+解析器种类：正则（模糊匹配），（DOM树进行结构化访问）html.parser,beatiful soup(包含前后两种的功能，强大),lxml
+
+bs4介绍
+	html网页构建bs4对象--》find/find-all获取节点树形--》访问名称，属性，文字
+
+node.name  node['herf']  node.get_text()
+
+
+
+
+
+项目过程：
+	确定目标（入口url）
+	-核心-分析目标（URL格式，数据格式，网页编码）
+	编写代码
+	执行爬虫
+
+	分析：url补全，数据格式（特定级别文字，图片的名称，属性不同），编码格式（head中）
+	

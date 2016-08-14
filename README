@@ -1,0 +1,11 @@
+.
+├── clean.sh				清空工程
+├── html_downloader.py		下载模块
+├── html_outputer.py		输出模块
+├── html_parser.py			分析
+├── nodes					背景知识
+├── README		
+├── spider_main.py			主模块
+└── url_manager.py 			管理模块
+
+0 directories, 8 files
